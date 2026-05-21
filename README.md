@@ -1,3 +1,36 @@
+# 2048-Static-Application
+# Project Structure
+```
+.github/      → Contains CI/CD workflows and GitHub Actions automation.
+
+docs/         → Stores project documentation, architecture diagrams, and troubleshooting guides.
+
+docker/       → Holds Docker-related files and custom container configurations.
+
+helm/         → Contains Helm charts for Kubernetes application deployment.
+
+k8s/          → Stores raw Kubernetes manifest files for application resources.
+
+monitoring/   → Includes Prometheus, Grafana, and monitoring stack configurations.
+
+Pictures/     → Stores screenshots, architecture images, and project visuals.
+
+scripts/      → Contains automation scripts for deployment, cleanup, and maintenance tasks.
+
+src/          → Holds the main application source code and static assets.
+
+terraform/    → Contains Infrastructure as Code files for AWS/cloud resource provisioning.
+
+.dockerignore → Specifies files and folders excluded from Docker build context.
+
+.gitignore    → Defines files and folders ignored by Git version control.
+
+docker-compose.yml → Defines multi-container local development environment setup.
+
+README.md     → Main project documentation, setup instructions, and project overview.
+
+```
+
 # 2048-devops-platform
 Production-style DevOps project showcasing containerization, Kubernetes orchestration, CI/CD pipelines, infrastructure automation, monitoring, and cloud deployment using AWS.
 

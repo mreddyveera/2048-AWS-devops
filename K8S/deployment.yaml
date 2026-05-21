@@ -32,9 +32,9 @@ spec:
         version: v1
         managed-by: kubectl
     spec:
-      securityContext:
-        runAsNonRoot: true #In linux 0 is root user id
-        runAsUser: 1000
+      # securityContext:
+      #   runAsNonRoot: true #In linux 0 is root user id
+      #   runAsUser: 1000
       
       containers:
         - name: nginx
