@@ -1,5 +1,10 @@
 # 2048-Static-Application
-# Project Structure
+Production-style DevOps project showcasing containerization, Kubernetes orchestration, CI/CD pipelines, infrastructure automation, monitoring, and cloud deployment using AWS.
+
+2048 is static Front End Application.
+
+# Folder Structure
+
 ```
 .github/      → Contains CI/CD workflows and GitHub Actions automation.
 
@@ -30,11 +35,19 @@ docker-compose.yml → Defines multi-container local development environment set
 README.md     → Main project documentation, setup instructions, and project overview.
 
 ```
-
-# 2048-devops-platform
-Production-style DevOps project showcasing containerization, Kubernetes orchestration, CI/CD pipelines, infrastructure automation, monitoring, and cloud deployment using AWS.
-
-2048 is static Front End Application.
+### Architecture diagram
+### CI/CD flow
+### Tools used
+### Screenshots
+### Monitoring screenshots
+### ArgoCD screenshots
+### Scaling screenshots
+### Security scans
+### Cost optimization notes
+### Disaster recovery approach
+### Deployment steps
+### Challenges faced
+### Future improvements
 
 # DOCKER
 Analyze the docker/Dockerfile. I have implemented the following 8 best practices to create a docker file.
@@ -107,21 +120,6 @@ some base images have generic user => node:10-alpine
     -> On Right side, click on start analysis
     -> Analyze vulnabiloities ( I will make the vulnerabilities zero - You are already on wrong thinking)
 
-----------------------------------------------------------------------------------------------------------------------------------
-```
-Internet
-   ↓
-AWS ALB (single load balancer)
-   ↓
-Ingress Controller
-   ↓
-ClusterIP Service
-   ↓
-Pods
-```
-
- 
-
-	
+--------------------------------------------------------------------------
 	
 	
