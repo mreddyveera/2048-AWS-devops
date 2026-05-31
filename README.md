@@ -1,7 +1,9 @@
-# 2048-Static-Application
-Production-style DevOps project showcasing containerization, Kubernetes orchestration, CI/CD pipelines, infrastructure automation, monitoring, and cloud deployment using AWS.
+# 2048-Game
+2048 is static Front End Application powered by HTML (Markup language), CSS (Styling), Java Script (Dynamic behaviour).
 
-2048 is static Front End Application.
+# AIM
+Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the architecture.md file in docs folder for more details.
+
 
 # Folder Structure
 
@@ -12,13 +14,7 @@ docs/         → Stores project documentation, architecture diagrams, and troub
 
 docker/       → Holds Docker-related files and custom container configurations.
 
-helm/         → Contains Helm charts for Kubernetes application deployment.
-
-k8s/          → Stores raw Kubernetes manifest files for application resources.
-
 monitoring/   → Includes Prometheus, Grafana, and monitoring stack configurations.
-
-Pictures/     → Stores screenshots, architecture images, and project visuals.
 
 scripts/      → Contains automation scripts for deployment, cleanup, and maintenance tasks.
 
@@ -30,14 +26,21 @@ terraform/    → Contains Infrastructure as Code files for AWS/cloud resource p
 
 .gitignore    → Defines files and folders ignored by Git version control.
 
-docker-compose.yml → Defines multi-container local development environment setup.
-
 README.md     → Main project documentation, setup instructions, and project overview.
 
 ```
-### Architecture diagram
 ### CI/CD flow
 ### Tools used
+```
+1.AWS - Cloud Platform
+2.Github Actions - CI/CD Pielines
+3.Docker - Containerizing the application
+4.ECR - Store the Docker Images
+5.Prometheus - Application Metrics
+6.Grfana - UI Dashboard for prometheus
+7.CloudWatch - Application logs
+8.Terraform - Infrastructure as Code
+```
 ### Screenshots
 ### Monitoring screenshots
 ### ArgoCD screenshots
