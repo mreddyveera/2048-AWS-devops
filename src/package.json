@@ -1,0 +1,20 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint js/**/*.js",
+    "format:check": "prettier --check .",
+    "test": "jest",
+    "build": "echo Build Successful"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^10.4.1",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.3"
+  }
+}
