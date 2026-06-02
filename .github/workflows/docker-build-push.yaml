@@ -36,7 +36,7 @@ jobs:
                 docker build \
                 -f docker/Docker \
                 -t ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:${{ env.SHORT_SHA }} \
-                -t ${{ secrets.DOCKERHUB_TOKEN }}/2048-game:develop-latest \
+                -t ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:develop-latest \
                 .
 
             - name: Trivy Vulnerability Scan
