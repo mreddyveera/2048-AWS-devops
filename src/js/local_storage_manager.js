@@ -35,6 +35,7 @@ LocalStorageManager.prototype.localStorageSupported = function () {
     storage.removeItem(testKey);
     return true;
   } catch (error) {
+    console.log(error.message);
     return false;
   }
 };
