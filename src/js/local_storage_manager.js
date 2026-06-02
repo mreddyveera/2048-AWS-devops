@@ -6,7 +6,7 @@ window.fakeStorage = {
   },
 
   getItem: function (id) {
-    return this._data.hasOwnProperty(id) ? this._data[id] : undefined;
+    return Object.prototype.hasOwnProperty.call(this._data,id) ? this._data[id] : undefined;
   },
 
   removeItem: function (id) {
@@ -35,6 +35,7 @@ LocalStorageManager.prototype.localStorageSupported = function () {
     storage.removeItem(testKey);
     return true;
   } catch (error) {
+    console.log(error.message);
     return false;
   }
 };
