@@ -40,7 +40,7 @@ jobs:
                 .
 
             - name: Trivy Vulnerability Scan
-              uses: aquasecurity/trivy-action@v0.28.0
+              uses: aquasecurity/trivy-action@v0.36.0
               with:
                 image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:${{ env.SHORT_SHA }}
                 format: table
