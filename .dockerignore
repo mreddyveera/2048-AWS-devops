@@ -1,0 +1,30 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+docs/
+diagrams/
+
+# Infrastructure
+helm/
+terraform/
+monitoring/
+
+# Utility Scripts
+scripts/
+
+# Docker
+docker-compose.yaml
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
