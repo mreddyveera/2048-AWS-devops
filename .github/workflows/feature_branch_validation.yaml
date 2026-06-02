@@ -21,16 +21,21 @@ jobs:
                 node-version: 22
             
             - name: Install Dependencies
+              working-directory: src
               run: npm ci
 
             - name: ESLint
+              working-directory: src
               run: npm run lint
 
             - name: Dependency Audit
+              working-directory: src
               run: npm audit --audit-level=high
             
             - name: Unit Tests
+              working-directory: src
               run: npm test
 
             - name: Build Validation
+              working-directory: src
               run: npm run build
