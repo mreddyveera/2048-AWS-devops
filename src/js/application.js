@@ -3,4 +3,3 @@ window.requestAnimationFrame(function () {
   new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
 });
 console.log("DEMO");
-console.log("DEMO2");
