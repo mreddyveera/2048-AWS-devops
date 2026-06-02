@@ -1,0 +1,63 @@
+name: Docker Image Build and push to a Registry
+
+on:
+    push:
+        branches:
+            - develop
+permissions:
+    contents: read
+
+jobs:
+    build-and-push:
+        name: Build and Push Docker Image
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+              with:
+                fetch-depth: 0
+            - name: Generate Image Tag
+              id: vars
+              run: |
+                echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+            
+            - name: Set up Docker Buildx
+              uses: docker/setup-buildx-action@v3
+
+            - name: Login into DockerHub
+              uses: docker/login-action@v3
+              with:
+                username: ${{secrets.DOCKERHUB_USERNAME}}
+                password: ${{secrets.DOCKERHUB_TOKEN}}
+
+            - name: Build Docker Image
+              run: |
+                docker build \
+                -f docker/Docker \
+                -t ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:${{ env.SHORT_SHA }} \
+                -t ${{ secrets.DOCKERHUB_TOKEN }}/2048-game:develop-latest \
+                .
+
+            - name: Trivy Vulnerability Scan
+              uses: aquasecurity/trivy-action@v0.28.0
+              with:
+                image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:${{ env.SHORT_SHA }}
+                format: table
+                exit-code: '1'
+                ignore-unfixed: true
+                vuln-type: 'os,library'
+                severity: 'CRITICAL,HIGH'
+
+            - name: Push Commit Tag
+              run: |
+                docker push \
+                ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:${{ env.SHORT_SHA }}
+
+            - name: Push Develop Latest Tag
+              run: |
+                docker push \
+                ${{ secrets.DOCKERHUB_USERNAME }}/2048-game:develop-latest
+
+
+
