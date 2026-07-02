@@ -1,9 +1,10 @@
 # 2048-Game
+
 2048 is static Front End Application powered by HTML (Markup language), CSS (Styling), Java Script (Dynamic behaviour).
 
 # AIM
-Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the architecture.md file in docs folder for more details.
 
+Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the architecture.md file in docs folder for more details.
 
 # Folder Structure
 
@@ -29,8 +30,11 @@ terraform/    → Contains Infrastructure as Code files for AWS/cloud resource p
 README.md     → Main project documentation, setup instructions, and project overview.
 
 ```
+
 ### CI/CD flow
+
 ### Tools used
+
 ```
 1.AWS - Cloud Platform
 2.Github Actions - CI/CD Pielines
@@ -42,16 +46,23 @@ README.md     → Main project documentation, setup instructions, and project ov
 8.Terraform - Infrastructure as Code
 
 ```
+
 ### Monitoring screenshots
+
 ### ArgoCD screenshots
+
 ### Scaling screenshots
+
 ### Security scans
+
 ### Cost optimization notes
+
 ### Disaster recovery approach
+
 ### Deployment steps
+
 ### Challenges faced
+
 ### Future improvements
 
---------------------------------------------------------------------------
-	
-	
+---
