@@ -82,6 +82,6 @@ resource "aws_default_security_group" "default" {
   egress  = []
 
   tags = {
-    Name = "${security_group}-default-sg"
+    Name = "security_group-default-sg"
   }
 }
