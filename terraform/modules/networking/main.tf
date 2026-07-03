@@ -74,3 +74,14 @@ resource "aws_nat_gateway" "nat_gateway" {
   })
   depends_on = [aws_internet_gateway.igw]
 }
+
+resource "aws_default_security_group" "default" {
+  vpc_id = aws_vpc.vpc.id
+
+  ingress = []
+  egress  = []
+
+  tags = {
+    Name = "${security_group}-default-sg"
+  }
+}
