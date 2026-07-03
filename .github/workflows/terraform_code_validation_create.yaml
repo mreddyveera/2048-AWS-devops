@@ -40,7 +40,7 @@ jobs:
             
             - name: Terraform init
               working-directory: terraform/environments/dev
-              run: terraform init -backend=false -input=false
+              run: terraform init
 
             - name: Terraform validate
               working-directory: terraform/environments/dev
