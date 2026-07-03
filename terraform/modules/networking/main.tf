@@ -91,3 +91,20 @@ resource "aws_default_security_group" "default" {
     Name = "security_group-default-sg"
   }
 }
+resource "aws_cloudwatch_log_group" "vpc_flow_logs" {
+  name = "/aws/vpc-flowlogs/dev"
+}
+resource "aws_iam_role" "vpc_flow_log_role" {
+  name = "vpc-flow-log-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = {
+        Service = "vpc-flow-logs.amazonaws.com"
+      }
+    }]
+  })
+}
