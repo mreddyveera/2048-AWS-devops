@@ -14,12 +14,6 @@ resource "aws_vpc" "vpc" {
     }
   )
 }
-resource "aws_flow_log" "example" {
-  iam_role_arn    = aws_iam_role.vpc_flow_log_role.arn
-  log_destination = aws_cloudwatch_log_group.vpc_flow_logs.arn
-  traffic_type    = "ALL"
-  vpc_id          = aws_vpc.vpc.id
-}
 
 resource "aws_subnet" "public" {
   vpc_id            = aws_vpc.vpc.id
@@ -79,32 +73,4 @@ resource "aws_nat_gateway" "nat_gateway" {
       Name = "nat-gateway-${count.index + 1}"
   })
   depends_on = [aws_internet_gateway.igw]
-}
-
-resource "aws_default_security_group" "default" {
-  vpc_id = aws_vpc.vpc.id
-
-  ingress = []
-  egress  = []
-
-  tags = {
-    Name = "security_group-default-sg"
-  }
-}
-resource "aws_cloudwatch_log_group" "vpc_flow_logs" {
-  name = "/aws/vpc-flowlogs/dev"
-}
-resource "aws_iam_role" "vpc_flow_log_role" {
-  name = "vpc-flow-log-role"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [{
-      Action = "sts:AssumeRole"
-      Effect = "Allow"
-      Principal = {
-        Service = "vpc-flow-logs.amazonaws.com"
-      }
-    }]
-  })
 }
