@@ -1,0 +1,68 @@
+name: Terraform code Analyze
+
+on:
+    push:
+        branches:
+            - 'terraform/**'
+        paths:
+            - 'terraform/**'
+    
+    pull_request:
+        branches:
+            - develop
+        paths:
+            - 'terraform/**'
+permissions:
+    contents: read
+    id-token: write
+
+jobs:
+    terraform_code_analyze:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Install terraform
+              uses: hashicorp/setup-terraform@v4
+              with:
+                terraform_version: "1.14.8"
+
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                role-to-assume: arn:aws:iam::942875994012:role/github-actions-terraform-role
+                aws-region: us-east-1
+                
+            - name: Terraform format
+              working-directory: terraform
+              run: terraform fmt -check -recursive
+            
+            - name: Terraform init
+              working-directory: terraform/environments/dev
+              run: terraform init -backend=false -input=false
+
+            - name: Terraform validate
+              working-directory: terraform/environments/dev
+              run: terraform validate
+
+            - name: Terraform plan
+              working-directory: terraform/environments/dev
+              run: terraform plan -input=false
+
+            - name: Run Checkov
+              uses: bridgecrewio/checkov-action@v12
+              with:
+                directory: terraform/
+                framework: terraform
+                output_format: cli,sarif
+                output_file_path: console,results.sarif
+
+            - name: Run Trivy IaC Scan
+              uses: aquasecurity/trivy-action@v0.36.0
+              with:
+                scan-type: 'config'
+                scan-ref: terraform/
+                severity: HIGH,CRITICAL
+                exit-code: 1
+                ignore-unfixed: true
