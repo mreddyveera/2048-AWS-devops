@@ -20,3 +20,19 @@ variable "enable_dns_hostnames"{
 }
 variable "is_peering_required"{
 }
+
+variable "public_subnet_tags"{
+}
+
+variable "private_subnet_tags"{
+}
+
+variable "availabilty_zones"{
+}
+
+variable "igw_tags"{
+}
+variable "eip_tags"{
+}
+variable "nat_gateway_tags"{
+}

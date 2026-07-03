@@ -18,10 +18,10 @@ variable "common_tags"{
         Terraform = "true"
     }
 }
-variable "networking_tags"{
+variable "vpc_tags"{
     type= map(string)
     default={
-        Purpose = "learning"
+        Name = "2048-learning"
     }
 }
 variable "public_subnet_cidrs"{
@@ -37,4 +37,46 @@ variable "private_subnet_cidrs"{
 variable "is_peering_required"{
     type=bool
     default=true
+}
+
+variable "public_subnet_tags"{
+    type= map(string)
+    default= {
+        Name ="2048-public subnet"
+    }
+}
+
+variable "private_subnet_tags"{
+    type= map(string)
+    default= {
+        Name ="2048-private subnet"
+    }
+}
+
+variable "availability_zones"{
+    type= list(string)
+    default = ["us-east-1a", "us-east-1b"]
+}
+
+variable "igw_tags"{
+    type = map(string)
+    default = {
+        Name = " 2048-Internet-Gateway"
+
+    }
+}
+
+variable "eip_tags"{
+    type = map(string)
+    default = {
+        Name = " 2048-elastic-ip"
+
+    }
+}
+
+variable "nat_gate_way_tags"{
+    type = map(string)
+    default = {
+        Name = " 2048-nat-gateway"
+    }
 }

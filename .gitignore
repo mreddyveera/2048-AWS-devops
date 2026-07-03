@@ -1,4 +1,8 @@
 .sass-cache/
 Diagrams/*
 node_modules
-./.github/workflows/terraform_code_validation_create.yaml
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
