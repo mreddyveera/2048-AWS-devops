@@ -2,11 +2,13 @@ window.fakeStorage = {
   _data: {},
 
   setItem: function (id, val) {
-    return this._data[id] = String(val);
+    return (this._data[id] = String(val));
   },
 
   getItem: function (id) {
-    return Object.prototype.hasOwnProperty.call(this._data,id) ? this._data[id] : undefined;
+    return Object.prototype.hasOwnProperty.call(this._data, id)
+      ? this._data[id]
+      : undefined;
   },
 
   removeItem: function (id) {
@@ -14,24 +16,24 @@ window.fakeStorage = {
   },
 
   clear: function () {
-    return this._data = {};
-  }
+    return (this._data = {});
+  },
 };
 
 function LocalStorageManager() {
-  this.bestScoreKey     = "bestScore";
-  this.gameStateKey     = "gameState";
+  this.bestScoreKey = 'bestScore';
+  this.gameStateKey = 'gameState';
 
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
 }
 
 LocalStorageManager.prototype.localStorageSupported = function () {
-  var testKey = "test";
+  var testKey = 'test';
 
   try {
     var storage = window.localStorage;
-    storage.setItem(testKey, "1");
+    storage.setItem(testKey, '1');
     storage.removeItem(testKey);
     return true;
   } catch (error) {
