@@ -40,7 +40,7 @@ jobs:
             
             - name: Terraform init
               working-directory: terraform/environments/dev
-              run: terraform init -reconfigure
+              run: terraform init -migrate-state
 
             - name: Terraform validate
               working-directory: terraform/environments/dev
