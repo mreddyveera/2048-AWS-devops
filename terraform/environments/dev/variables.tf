@@ -77,6 +77,13 @@ variable "eip_tags" {
 variable "nat_gate_way_tags" {
   type = map(string)
   default = {
-    Name = " 2048-nat-gateway"
+    Name = "2048-nat-gateway"
+  }
+}
+
+variable "public_route_table_tags" {
+  type = map(string)
+  default = {
+    Name = "2048-public-route-table"
   }
 }
