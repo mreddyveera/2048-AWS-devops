@@ -83,7 +83,7 @@ variable "nat_gate_way_tags" {
 
 variable "public_route_table_tags" {
   type = map(string)
-  default ={
-    Name= "2048-public-route-table"
+  default = {
+    Name = "2048-public-route-table"
   }
 }

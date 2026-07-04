@@ -16,17 +16,17 @@ resource "aws_vpc" "vpc" {
 }
 
 resource "aws_subnet" "public" {
-  vpc_id            = aws_vpc.vpc.id
-  count             = length(var.public_subnet_cidrs)
-  cidr_block        = var.public_subnet_cidrs[count.index]
-  availability_zone = var.availability_zones[count.index]
+  vpc_id                  = aws_vpc.vpc.id
+  count                   = length(var.public_subnet_cidrs)
+  cidr_block              = var.public_subnet_cidrs[count.index]
+  availability_zone       = var.availability_zones[count.index]
   map_public_ip_on_launch = true
   tags = merge(
     var.public_subnet_tags,
     var.common_tags,
     {
-    Name = "public-subnet-${count.index + 1}"
-  }
+      Name = "public-subnet-${count.index + 1}"
+    }
   )
 }
 
@@ -40,8 +40,8 @@ resource "aws_subnet" "private" {
     var.private_subnet_tags,
     var.common_tags,
     {
-    Name = "private-subnet-${count.index + 1}"
-  }
+      Name = "private-subnet-${count.index + 1}"
+    }
   )
 }
 
@@ -90,7 +90,7 @@ resource "aws_route_table" "public_route_table" {
     gateway_id = aws_internet_gateway.igw.id
   }
 
-  tags = merge (
+  tags = merge(
     var.common_tags,
     var.public_route_table_tags,
     {
@@ -100,8 +100,8 @@ resource "aws_route_table" "public_route_table" {
 }
 
 resource "aws_route_table_association" "public_subnet_association" {
-  count = length(var.public_subnet_cidrs)
-  subnet_id      = aws_subnet.public[count.index].id   # attach RT to this subnet
+  count          = length(var.public_subnet_cidrs)
+  subnet_id      = aws_subnet.public[count.index].id # attach RT to this subnet
   route_table_id = aws_route_table.public_route_table.id
 }
 

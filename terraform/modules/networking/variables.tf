@@ -36,9 +36,9 @@ variable "eip_tags" {
 }
 variable "nat_gateway_tags" {
 }
-variable "public_route_table_cidr_block"{
-  type=string
-  default="0.0.0.0/0"          
+variable "public_route_table_cidr_block" {
+  type    = string
+  default = "0.0.0.0/0"
 }
-variable "public_route_table_tags"{
+variable "public_route_table_tags" {
 }
