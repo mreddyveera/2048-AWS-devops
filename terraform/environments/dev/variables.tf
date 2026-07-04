@@ -87,3 +87,16 @@ variable "public_route_table_tags" {
     Name = "2048-public-route-table"
   }
 }
+
+variable "alb_security_group_tags" {
+  type = map(string)
+  default = {
+    resource-type = "application load balancer"
+  }
+}
+variable "ecs_security_group_tags" {
+  type = map(string)
+  default = {
+    resource-type = "ecs"
+  }
+}
