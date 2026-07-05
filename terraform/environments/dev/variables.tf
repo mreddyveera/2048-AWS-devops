@@ -1,6 +1,6 @@
 variable "project_name" {
   type    = string
-  default = "2048_ogame_vpc"
+  default = "2048-game"
 }
 variable "environment" {
   type    = string
@@ -112,4 +112,8 @@ variable "deletion_window_in_days" {
 variable "enable_key_rotation" {
   type    = bool
   default = true
+}
+variable "desired_count" {
+  type    = number
+  default = 3
 }
