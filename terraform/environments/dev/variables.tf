@@ -100,3 +100,16 @@ variable "ecs_security_group_tags" {
     resource-type = "ecs"
   }
 }
+variable "repository_name" {
+  type    = string
+  default = "2048-game-ECR-Registry"
+}
+
+variable "deletion_window_in_days" {
+  type    = number
+  default = 7
+}
+variable "enable_key_rotation" {
+  type    = bool
+  default = true
+}
