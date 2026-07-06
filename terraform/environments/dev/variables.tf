@@ -117,3 +117,8 @@ variable "desired_count" {
   type    = number
   default = 3
 }
+
+variable "domain_name" {
+  type    = string
+  default = "manikanta.space"
+}

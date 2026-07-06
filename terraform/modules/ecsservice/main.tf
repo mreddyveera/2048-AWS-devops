@@ -19,7 +19,7 @@ resource "aws_cloudwatch_log_group" "yada_2048" {
   tags = merge(
     var.common_tags,
     {
-      Environment = "production"
+      Environment = "dev"
       Name        = "yada-2048"
     }
   )
@@ -46,7 +46,7 @@ resource "aws_iam_role" "ecs_execution_role" {
   tags = merge(
     var.common_tags,
     {
-      Name = "ecs-ecution-role"
+      Name = "ecs-execution-role"
   })
 }
 
@@ -116,7 +116,13 @@ resource "aws_lb_target_group" "ecs_tg" {
     unhealthy_threshold = 3
   }
 
-  tags = var.common_tags
+  tags = merge(
+    var.common_tags,
+    {
+      Name           = "2048-alb-tg"
+      private-subnet = true
+    }
+  )
 }
 
 resource "aws_ecs_service" "ecs_service_2048" {
@@ -159,31 +165,6 @@ resource "aws_lb" "lb_2048" {
   )
 }
 
-resource "aws_lb_target_group" "target_group_alb_2048" {
-  name        = "tf-2048-lb-tg"
-  port        = 80
-  protocol    = "HTTP"
-  vpc_id      = var.vpc_id
-  target_type = "ip"
-  health_check {
-    enabled             = true
-    path                = "/"
-    protocol            = "HTTP"
-    matcher             = "200"
-    interval            = 30
-    timeout             = 5
-    healthy_threshold   = 2
-    unhealthy_threshold = 3
-  }
-  tags = merge(
-    var.common_tags,
-    {
-      Name           = "2048-alb-tg"
-      private-subnet = true
-    }
-  )
-}
-
 resource "aws_lb_listener" "http_redirect" {
   load_balancer_arn = aws_lb.lb_2048.arn
   port              = 80
@@ -200,3 +181,15 @@ resource "aws_lb_listener" "http_redirect" {
   }
 }
 
+resource "aws_lb_listener" "https_listener" {
+  load_balancer_arn = aws_lb.lb_2048.arn
+  port              = 443
+  protocol          = "HTTPS"
+  certificate_arn   = var.certificate_arn
+  ssl_policy        = "ELBSecurityPolicy-2016-08"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.ecs_tg.arn
+  }
+}

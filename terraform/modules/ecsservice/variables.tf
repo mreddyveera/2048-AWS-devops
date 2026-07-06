@@ -29,3 +29,4 @@ variable "public_alb_sg_ids" {
 
 }
 variable "public_subnet_ids" {}
+variable "certificate_arn" {}

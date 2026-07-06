@@ -9,4 +9,5 @@ module "ecs" {
   vpc_id                 = module.networking.vpc_id
   public_alb_sg_ids      = module.securitygroups.public_alb_sg_ids
   public_subnet_ids      = module.networking.public_subnet_ids
+  certificate_arn        = module.acm.certificate_arn
 }
