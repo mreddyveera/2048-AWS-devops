@@ -121,4 +121,11 @@ variable "desired_count" {
 variable "domain_name" {
   type    = string
   default = "manikanta.space"
+
 }
+
+variable "alert_email"{
+  type=string
+  default="reddyveeramanikanta54304@gmail.com"
+}
+
