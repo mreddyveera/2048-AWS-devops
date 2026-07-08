@@ -135,6 +135,11 @@ resource "aws_ecs_service" "ecs_service_2048" {
   deployment_minimum_healthy_percent = 50
   deployment_maximum_percent         = 200
 
+  depends_on = [
+      aws_lb_listener.http_redirect,
+      aws_lb_listener.https_listener
+   ]
+
   network_configuration {
     assign_public_ip = false
     subnets          = var.private_subnet_ids
