@@ -124,8 +124,8 @@ variable "domain_name" {
 
 }
 
-variable "alert_email"{
-  type=string
-  default="reddyveeramanikanta54304@gmail.com"
+variable "alert_email" {
+  type    = string
+  default = "reddyveeramanikanta54304@gmail.com"
 }
 

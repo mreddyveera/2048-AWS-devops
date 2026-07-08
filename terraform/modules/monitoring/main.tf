@@ -10,11 +10,11 @@ resource "aws_sns_topic" "monitoring" {
 
   name = "${var.project_name}-alerts"
 
-  tags = merge (
+  tags = merge(
     var.common_tags,
     {
       name = "${var.project_name}-alerts"
-    })
+  })
 }
 
 resource "aws_sns_topic_subscription" "email" {
@@ -54,10 +54,10 @@ resource "aws_cloudwatch_metric_alarm" "ecs_cpu_high" {
     ServiceName = var.ecs_service_name
   }
 
-  tags =merge (
-    {name = "${var.project_name}-cpu-high"},
+  tags = merge(
+    { name = "${var.project_name}-cpu-high" },
     var.common_tags
-  ) 
+  )
 }
 
 resource "aws_cloudwatch_metric_alarm" "ecs_memory_high" {
@@ -90,10 +90,10 @@ resource "aws_cloudwatch_metric_alarm" "ecs_memory_high" {
     ServiceName = var.ecs_service_name
   }
 
-  tags =merge (
-    {name = "${var.project_name}-memory-high"},
+  tags = merge(
+    { name = "${var.project_name}-memory-high" },
     var.common_tags
-  ) 
+  )
 }
 
 resource "aws_cloudwatch_metric_alarm" "alb_5xx" {
