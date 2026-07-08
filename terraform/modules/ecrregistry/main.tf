@@ -17,16 +17,3 @@ resource "aws_ecr_repository" "ecr" {
     kms_key         = aws_kms_key.ecr.arn
   }
 }
-
-resource "aws_ecr_registry_scanning_configuration" "main" {
-  scan_type = "ENHANCED"
-
-  rule {
-    scan_frequency = "CONTINUOUS_SCAN"
-
-    repository_filter {
-      filter      = var.ecr_name
-      filter_type = "WILDCARD"
-    }
-  }
-}
