@@ -11,11 +11,7 @@ Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the archi
 ```
 .github/      → Contains CI/CD workflows and GitHub Actions automation.
 
-docs/         → Stores project documentation, architecture diagrams, and troubleshooting guides.
-
 docker/       → Holds Docker-related files and custom container configurations.
-
-monitoring/   → Includes Prometheus, Grafana, and monitoring stack configurations.
 
 scripts/      → Contains automation scripts for deployment, cleanup, and maintenance tasks.
 
@@ -30,6 +26,13 @@ terraform/    → Contains Infrastructure as Code files for AWS/cloud resource p
 README.md     → Main project documentation, setup instructions, and project overview.
 
 ```
+# Architecture Diagram
+
+```
+![Architecture Diagram](./diagrams/2048-game%20Architecture%20Diagram.jpeg)
+
+```
+
 
 ### CI/CD flow
 
