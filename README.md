@@ -1,12 +1,12 @@
-# 2048-Game
+### 2048-Game
 
 2048 is static Front End Application powered by HTML (Markup language), CSS (Styling), Java Script (Dynamic behaviour).
 
-# AIM
+### AIM
 
 Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the architecture.md file in docs folder for more details.
 
-# Folder Structure
+### Folder Structure
 
 ```
 .github/      → Contains CI/CD workflows and GitHub Actions automation.
@@ -26,7 +26,7 @@ terraform/    → Contains Infrastructure as Code files for AWS/cloud resource p
 README.md     → Main project documentation, setup instructions, and project overview.
 
 ```
-# Architecture Diagram
+### Architecture Diagram
 
 ![Architecture Diagram](diagrams/2048-game-architecture-diagram.png)
 
