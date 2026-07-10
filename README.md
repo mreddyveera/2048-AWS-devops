@@ -29,7 +29,7 @@ README.md     → Main project documentation, setup instructions, and project ov
 # Architecture Diagram
 
 ```
-![Architecture Diagram](./diagrams/2048-game-architecture-iagram.png)
+![Architecture Diagram](./diagrams/2048-game-architecture-diagram.png)
 
 ```
 ### 🛠️ Technologies & Tools
