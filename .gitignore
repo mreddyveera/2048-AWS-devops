@@ -1,5 +1,4 @@
 .sass-cache/
-Diagrams/*
 node_modules
 # Terraform
 **/.terraform/*
