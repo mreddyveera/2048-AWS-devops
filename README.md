@@ -29,7 +29,7 @@ README.md     → Main project documentation, setup instructions, and project ov
 # Architecture Diagram
 
 ```
-![Architecture Diagram](./diagrams/2048-devops-architecture.png)
+![Architecture Diagram](./diagrams/2048-game-architecture-iagram.png)
 
 ```
 ### 🛠️ Technologies & Tools
