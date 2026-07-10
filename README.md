@@ -32,24 +32,40 @@ README.md     → Main project documentation, setup instructions, and project ov
 ![Architecture Diagram](./diagrams/2048-game-architecture-iagram.png)
 
 ```
-
-
-### CI/CD flow
-
-### Tools used
+### 🛠️ Technologies & Tools
 
 ```
-1.AWS - Cloud Platform
-2.Github Actions - CI/CD Pielines
-3.Docker - Containerizing the application
-4.ECR - Store the Docker Images
-5.Prometheus - Application Metrics
-6.Grfana - UI Dashboard for prometheus
-7.CloudWatch - Application logs
-8.Terraform - Infrastructure as Code
+| Category               | Technology     |
+| ---------------------- | -------------- |
+| Infrastructure as Code | Terraform      |
+| Containerization       | Docker         |
+| CI/CD                  | GitHub Actions |
+| Scripting              | Python         |
+| Version Control        | Git & GitHub   |
+| Cloud Platform         | AWS            |
 
 ```
 
+### ☁️ AWS Services Used
+
+```
+| Service                             | Purpose                                                                     |
+| ----------------------------------- | --------------------------------------------------------------------------- |
+| **Amazon VPC**                      | Isolated network for the application infrastructure                         |
+| **Application Load Balancer (ALB)** | Distributes incoming traffic across ECS tasks                               |
+| **Amazon ECS (Fargate)**            | Runs the containerized 2048 application without managing servers            |
+| **Amazon ECR**                      | Private Docker image registry                                               |
+| **Amazon Route 53**                 | DNS management and domain routing                                           |
+| **AWS Certificate Manager (ACM)**   | Manages SSL/TLS certificates for HTTPS                                      |
+| **Amazon CloudWatch**               | Centralized application logs, metrics, and monitoring                       |
+| **Amazon SNS**                      | Sends email notifications for CloudWatch alarms                             |
+| **IAM**                             | Provides secure access control for ECS tasks, Terraform, and GitHub Actions |
+| **Security Groups**                 | Controls inbound and outbound network traffic                               |
+| **Internet Gateway**                | Enables internet access for public resources                                |
+| **NAT Gateway**                     | Allows private subnets to access the internet securely                      |
+| **Elastic IP**                      | Provides static public IP addresses for NAT Gateways                        |
+
+```
 ### Monitoring screenshots
 
 ### ArgoCD screenshots
