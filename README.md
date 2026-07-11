@@ -16,7 +16,7 @@ The application is deployed on Amazon ECS Fargate behind an Application Load Bal
 - Implement centralized logging and monitoring
 - Apply DevSecOps best practices including vulnerability scanning and IAM least privilege
 
-Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the architecturemore details.
+Deploy the 2048-game in AWS cloud with DevSecOps best practices. Refer the architecture for more details.
 
 ## Folder Structure
 
@@ -289,13 +289,27 @@ Security has been incorporated throughout the infrastructure following AWS and D
 
 ### Scaling screenshots
 
-### Security scans
 
-### Cost optimization notes
+## Deployment steps
 
-### Disaster recovery approach
+1. Modify the application source code.
+2. Commit and push the changes to the develop branch.
+3. GitHub Actions automatically builds a new Docker image (docker-build-push.yaml).
+4. The image is scanned using Trivy for vulnerabilities.
+5. The image is pushed to Amazon ECR using the mutable develop-latest tag.
+6. After the image is successfully pushed, ECS is instructed to perform a forced rolling deployment.
+```
+aws ecs update-service \
+  --cluster 2048-game-ecs-cluster \
+  --service 2048-game-ecs-service-2048 \
+  --force-new-deployment
 
-### Deployment steps
+```
+7. ECS launches new tasks that pull the latest Docker image from Amazon ECR.
+8. The Application Load Balancer performs health checks on the new tasks.
+9. Once the new tasks become healthy, ECS gracefully drains and stops the old tasks.
+10. The deployment completes with minimal downtime.
+
 
 ## Challenges faced
 
@@ -310,7 +324,5 @@ Security has been incorporated throughout the infrastructure following AWS and D
 | **ALB Listener & Target Group Configuration** | Correctly configured HTTP to HTTPS redirection, HTTPS listener, Target Group association, and ECS Service integration to enable secure traffic routing to containerized applications.                                                               |
 | **Custom Domain Configuration**               | Configured Route53 Alias records to route `manikanta.space` to the Application Load Balancer and validated end-to-end HTTPS connectivity.                                                                                                           |
 | **CloudWatch Logging**                        | Configured the ECS task definition to use the `awslogs` log driver, enabling centralized application logging through Amazon CloudWatch.                                                                                                             |
-
-### Future improvements
 
 ---
