@@ -93,6 +93,7 @@ AWS Services
 
 ### Branching-Strategy
 
+```
 main
 │
 ├── develop
@@ -100,6 +101,7 @@ main
 ├── feature/*
 │
 └── terraform/*
+```
 
 
 | Branch          |Description                                                                                                                 |
