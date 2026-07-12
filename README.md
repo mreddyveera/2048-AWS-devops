@@ -1,4 +1,4 @@
-F## Project Overview
+## Project Overview
 
 This project demonstrates how to deploy a containerized 2048 web application on AWS using Infrastructure as Code (Terraform) and DevSecOps best practices.
 
