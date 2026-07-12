@@ -64,7 +64,7 @@ Running ECS Tasks
 
 ```
 
-### Tools used
+## Tools used
 
 Technologies & Tools
 
@@ -91,7 +91,7 @@ AWS Services
 | IAM             | Authentication       |
 | Security Groups | Network Security     |
 
-### Branching-Strategy
+## Branching-Strategy
 
 ```
 main
@@ -112,7 +112,7 @@ main
 | **terraform/*** | Dedicated branches for developing and testing Infrastructure as Code (Terraform) changes independently of application code. |
 
 
-### CI/CD flow
+## CI/CD flow
 
 ```
 Developer
@@ -154,8 +154,14 @@ ECS Rolling Deployment
 Application Updated
 
 ```
-
-### Dockerfile
+## CI-CD Screenshots
+ ```
+ ![Feature Branch Validation](./diagrams/feature_branch_validation.png)
+ ![Docker Build and push](./diagrams/docker-pipeline.png)
+ ![Git Leaks](./diagrams/gitleaks.png)
+ ![Semgrep](./diagrams/semgrep.png)
+ ```
+## Dockerfile
 
 | Dockerfile Instruction                   | Why it is Used                                                                                                                                                                                     |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -164,7 +170,7 @@ Application Updated
 | **`EXPOSE 80`**                          | Documents that the container listens for HTTP traffic on port 80. ECS uses this port mapping to route traffic from the Application Load Balancer to the container.                                 |
 | **`CMD ["nginx", "-g", "daemon off;"]`** | Starts the Nginx web server in the foreground, which is the recommended way to keep a Docker container running.                                                                                    |
 
-### AWS Infrastructure
+## AWS Infrastructure
 
 The infrastructure is provisioned using modular Terraform. Each module is responsible for a specific layer of the AWS architecture, making the infrastructure reusable, maintainable, and scalable.
 
@@ -181,6 +187,10 @@ The infrastructure is provisioned using modular Terraform. Each module is respon
 | **Auto Scaling**                     | Configures ECS Service Auto Scaling policies that automatically increase or decrease the number of running tasks based on CloudWatch metrics such as CPU and memory utilization.                 |
 
 ## Infrastructure Provisioning Flow
+
+```
+![VPC](./diagrams/vpc-diagram.png)
+```
 
 ```
 Terraform
@@ -285,9 +295,43 @@ Security has been incorporated throughout the infrastructure following AWS and D
 | **Amazon ECR Image Scanning**     | Container images are scanned for known vulnerabilities before deployment using Amazon ECR image scanning.                                                                                             |
 | **Trivy Vulnerability Scanning**  | GitHub Actions performs automated vulnerability scanning on Docker images before pushing them to Amazon ECR, helping identify critical and high-severity vulnerabilities early in the CI/CD pipeline. |
 
-### Monitoring screenshots
+## ECS screenshots
 
-### Scaling screenshots
+```
+![ECS Cluster](./diagrams/Ecs_cluster.png)
+
+```
+```
+![ECS Service](./diagrams/Ecs_service.png)
+
+```
+
+## ECR screenshots
+
+```
+![ECR Registry](./diagrams/Ecr_registry.png)
+
+```
+## Route53 screenshots
+
+```
+![Route 53](./diagrams/Route53.png)
+```
+
+## ACM screenshots
+
+```
+![ACM](./diagrams/Acm.png)
+
+```
+
+## Cloudwatch Logs
+```
+![Cloudwtach_Log Streams](./diagrams/cloud_watch.png)
+![Log Event](./diagrams/log_event.png)
+![Alarm](./diagrams/cloudwatch_alaram.png)
+![SNS subscription](./diagrams/sns_subscription.png)
+```
 
 ## ECS screenshots
 
