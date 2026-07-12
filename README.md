@@ -154,6 +154,11 @@ ECS Rolling Deployment
 Application Updated
 
 ```
+## OIDC
+```
+![OIDC](./diagrams/image.png)
+
+```
 ## CI-CD Screenshots
  
  ![Feature Branch Validation](./diagrams/feature_branch_validation.png)
