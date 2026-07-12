@@ -156,7 +156,7 @@ Application Updated
 ```
 ## OIDC
 
-![OIDC](./diagrams/image.png)
+![OIDC](./diagrams/oidc.png)
 
 ## Branch Protection
 
