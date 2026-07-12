@@ -158,6 +158,16 @@ Application Updated
 
 ![OIDC](./diagrams/image.png)
 
+## Branch Protection
+
+![Develop-branch protection -part1](./diagrams/branch_protection_rule_01.png)
+![Develop-branch protection -part2](./diagrams/branch_protection_rule_01.png)
+
+## Secrets & Variables
+
+![Secrets-Configuartion](./diagrams/secrets.png)
+![Repository-Variables](./diagrams/Repostioryvariables.png)
+
 ## CI-CD Screenshots
  
  ![Feature Branch Validation](./diagrams/feature_branch_validation.png)
