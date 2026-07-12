@@ -314,9 +314,6 @@ Security has been incorporated throughout the infrastructure following AWS and D
 
 ![Route 53](./diagrams/Route53.png)
 
-## ACM screenshots
-
-![ACM](./diagrams/Acm.png)
 
 ## Cloudwatch Logs
 ![Cloudwtach_Log Streams](./diagrams/cloud_watch.png)
@@ -327,33 +324,10 @@ Security has been incorporated throughout the infrastructure following AWS and D
 
 ![SNS subscription](./diagrams/sns_subscription.png)
 
-## ECS screenshots
-
-![ECS Cluster](./diagrams/Ecs_cluster.png)
-
-![ECS Service](./diagrams/Ecs_service.png)
-
-## ECR screenshots
-
-![ECR Registry](./diagrams/Ecr_registry.png)
-
-## Route53 screenshots
-
-![Route 53](./diagrams/Route53.png)
 
 ## ACM screenshots
 
 ![ACM](./diagrams/Acm.png)
-
-## Cloudwatch Logs
-
-![Cloudwtach_Log Streams](./diagrams/cloud_watch.png)
-
-![Log Event](./diagrams/log_event.png)
-
-![Alarm](./diagrams/cloudwatch_alaram.png)
-
-![SNS subscription](./diagrams/sns_subscription.png)
 
 ## Deployment steps
 
