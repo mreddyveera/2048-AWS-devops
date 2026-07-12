@@ -1,4 +1,4 @@
-## Project Overview
+F## Project Overview
 
 This project demonstrates how to deploy a containerized 2048 web application on AWS using Infrastructure as Code (Terraform) and DevSecOps best practices.
 
@@ -291,42 +291,28 @@ Security has been incorporated throughout the infrastructure following AWS and D
 
 ## ECS screenshots
 
-```
 ![ECS Cluster](./diagrams/Ecs_cluster.png)
 
-```
-```
 ![ECS Service](./diagrams/Ecs_service.png)
-
-```
 
 ## ECR screenshots
 
-```
 ![ECR Registry](./diagrams/Ecr_registry.png)
 
-```
 ## Route53 screenshots
 
-```
 ![Route 53](./diagrams/Route53.png)
-```
 
 ## ACM screenshots
 
-```
 ![ACM](./diagrams/Acm.png)
 
-```
-
 ## Cloudwatch Logs
-```
+
 ![Cloudwtach_Log Streams](./diagrams/cloud_watch.png)
 ![Log Event](./diagrams/log_event.png)
 ![Alarm](./diagrams/cloudwatch_alaram.png)
 ![SNS subscription](./diagrams/sns_subscription.png)
-```
-
 
 ## Deployment steps
 
