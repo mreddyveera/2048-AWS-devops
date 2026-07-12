@@ -155,12 +155,15 @@ Application Updated
 
 ```
 ## CI-CD Screenshots
- ```
+ 
  ![Feature Branch Validation](./diagrams/feature_branch_validation.png)
+ 
  ![Docker Build and push](./diagrams/docker-pipeline.png)
+ 
  ![Git Leaks](./diagrams/gitleaks.png)
+ 
  ![Semgrep](./diagrams/semgrep.png)
- ```
+ 
 ## Dockerfile
 
 | Dockerfile Instruction                   | Why it is Used                                                                                                                                                                                     |
@@ -188,9 +191,7 @@ The infrastructure is provisioned using modular Terraform. Each module is respon
 
 ## Infrastructure Provisioning Flow
 
-```
 ![VPC](./diagrams/vpc-diagram.png)
-```
 
 ```
 Terraform
@@ -297,41 +298,30 @@ Security has been incorporated throughout the infrastructure following AWS and D
 
 ## ECS screenshots
 
-```
 ![ECS Cluster](./diagrams/Ecs_cluster.png)
 
-```
-```
 ![ECS Service](./diagrams/Ecs_service.png)
-
-```
 
 ## ECR screenshots
 
-```
 ![ECR Registry](./diagrams/Ecr_registry.png)
 
-```
 ## Route53 screenshots
 
-```
 ![Route 53](./diagrams/Route53.png)
-```
 
 ## ACM screenshots
 
-```
 ![ACM](./diagrams/Acm.png)
 
-```
-
 ## Cloudwatch Logs
-```
 ![Cloudwtach_Log Streams](./diagrams/cloud_watch.png)
+
 ![Log Event](./diagrams/log_event.png)
+
 ![Alarm](./diagrams/cloudwatch_alaram.png)
+
 ![SNS subscription](./diagrams/sns_subscription.png)
-```
 
 ## ECS screenshots
 
@@ -354,8 +344,11 @@ Security has been incorporated throughout the infrastructure following AWS and D
 ## Cloudwatch Logs
 
 ![Cloudwtach_Log Streams](./diagrams/cloud_watch.png)
+
 ![Log Event](./diagrams/log_event.png)
+
 ![Alarm](./diagrams/cloudwatch_alaram.png)
+
 ![SNS subscription](./diagrams/sns_subscription.png)
 
 ## Deployment steps
