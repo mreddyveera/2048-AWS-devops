@@ -361,6 +361,7 @@ aws ecs update-service \
 
 ## 2048 Game – Live Demo
 ![2048-Game](./diagrams/image.png)
+![2048-Game-Live-demo](./diagrams/2048-devops.mp4)
 
 ## Challenges faced
 
