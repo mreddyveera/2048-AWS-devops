@@ -359,6 +359,8 @@ aws ecs update-service \
 9. Once the new tasks become healthy, ECS gracefully drains and stops the old tasks.
 10. The deployment completes with minimal downtime.
 
+## 2048 Game – Live Demo
+![2048-Game](./diagrams/image.png)
 
 ## Challenges faced
 
